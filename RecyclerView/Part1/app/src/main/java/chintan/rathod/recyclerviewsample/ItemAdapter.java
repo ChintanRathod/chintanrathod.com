@@ -5,17 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 /**
- * Created by Rathod on 18-Jul-16.
+ * Created by Chintan Rathod. (www.chintanrathod.com)
  */
 public class ItemAdapter extends RecyclerView.Adapter<ItemHolder> {
 
-    private List<Item> itemList;
+    private List<Celebrity> celebrityList;
 
-    public ItemAdapter(List<Item> itemList) {
-        this.itemList = itemList;
+    public ItemAdapter(List<Celebrity> celebrityList) {
+        this.celebrityList = celebrityList;
     }
 
     @Override
@@ -28,12 +30,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemHolder> {
 
     @Override
     public void onBindViewHolder(ItemHolder holder, int position) {
-        Item item = itemList.get(position);
-        holder.txtDescription.setText(item.getDescription());
+        Celebrity item = celebrityList.get(position);
+        holder.txtCelebName.setText(item.getName());
+        holder.txtCelebMovie.setText(item.getFamousMovie());
+        Picasso.with(holder.txtCelebName.getContext()).load(item.getProfilePhotoLocation()).into(holder.profileImage);
     }
 
     @Override
     public int getItemCount() {
-        return itemList.size();
+        return celebrityList.size();
     }
 }
