@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    card_view:cardCornerRadius="4dp">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/fl_shimmer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profileImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="10dp"
+                android:src="#7e7e7e"
+                app:civ_border_color="#FF000000" />
+
+            <TextView
+                android:id="@+id/txtCelebName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/profileImage"
+                android:background="@drawable/rectangle_shape"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                tools:text="Large Text" />
+
+            <TextView
+                android:id="@+id/txtCelebMovie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtCelebName"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/profileImage"
+                android:background="@drawable/rectangle_shape"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                tools:text="Small Text" />
+        </RelativeLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+</android.support.v7.widget.CardView>
